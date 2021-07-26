@@ -1,4 +1,4 @@
-#include "yuwen_bst.h"
+#include "BST.h"
 #include "TextAnalyzer.h"
 #include "WordEntry.h"
 #include <fstream>
@@ -51,26 +51,20 @@ TextAnalyzer::TextAnalyzer(string fileName)
         while (word.length() > 0)
         {
             if (!isalpha(word.back()) && word.back() != '\'')
-            { // validate last char of string
+                // validate last char of string
                 word = word.substr(0, word.size() - 1);
-            }
             else if (!isalpha(word.front()))
-            { // validate first char of string
+                // validate first char of string
                 word = word.substr(1, word.size());
-            }
             else
-            {
                 break;
-            }
         }
 
         words.clear();
         // check for hyphens or other delimiters, and construct "words" vector
         index = word.find_first_not_of("abcdefghijklmnopqrstuvwxyz'");
         if (index < 0) // delimiter not found
-        {
             words.push_back(word);
-        }
         else
         {
             do
@@ -227,9 +221,7 @@ string *TextAnalyzer::listByDecreasingFrequency()
 long TextAnalyzer::frequencyOfWord(string word)
 {
     if (!tree->elementExists(word))
-    {
         return 0;
-    }
     return tree->find(word)->wordEntry->getFrequency();
 }
 

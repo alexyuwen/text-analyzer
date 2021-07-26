@@ -2,7 +2,7 @@
 #ifndef TEXT_ANALYZER_H
 #define TEXT_ANALYZER_H
 
-#include "yuwen_bst.h"
+#include "BST.h"
 #include "WordEntry.h"
 #include <iostream>
 #include <string>

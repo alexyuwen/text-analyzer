@@ -1,5 +1,5 @@
 #include "WordEntry.h"
-#include "yuwen_bst.h"
+#include "BST.h"
 #include <iostream>
 #include <string>
 #include <vector>
